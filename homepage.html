@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DormOnlineBooking</title>
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+        <div class="logo">
+            <a href="homepage.html"><i class="fa-solid fa-home"></i></a>
+        </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="homepage.html">หน้าแรก</a></li>
+                    <li><a href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="login" href="profile.html">โปรไฟล์</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="homepage.html">หน้าแรก</a></li>
+                    <li><a class="mobile" href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="mobile" href="profile.html">โปรไฟล์</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+        <section class="content bg" id ="content">
+            <div class="header2">
+                <h3>WELCOME</h3>
+                <h3 class="to">TO</h3>
+                <h3>IT DORMITORY</h3>
+                <p>จองหอพักออนไลน์</p>
+                <a class="book-link" href="booking.html" class="btn">จองเลย !</a>
+            </div>
+        </section>
+        <section class="news" id="news">
+            <h1 class="heading">ข่าว <span>สาร</span></h1>
+            <div class="steps-container">
+                <h2 class="steps-title">ขั้นตอนการจองและชำระเงิน</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>เข้าสู่ระบบ</h3>
+                        <p>ลงทะเบียนหรือเข้าสู่ระบบด้วยบัญชีนักศึกษา</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>ค้นหาห้องพัก</h3>
+                        <p>เลือกประเภทหอพัก ตึก และห้องที่ต้องการ</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>กรอกข้อมูลการจอง</h3>
+                        <p>กรอกชื่อ-นามสกุล รหัสนักศึกษา คณะ และเบอร์โทร</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>ชำระเงิน</h3>
+                        <p>โอนเงินผ่านธนาคารตามยอดที่ระบุ</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3>รอการอนุมัติ</h3>
+                        <p>เจ้าหน้าที่ตรวจสอบและอนุมัติการจองของคุณ</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h3>เข้าพัก</h3>
+                        <p>เข้าพักตามวันและเวลาที่กำหนด</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="social-icons">
+            <h1 class="heading"><span>ติดต่อ</span> เจ้าหน้าที่</h1>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/piyapong.piyapong.3939"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/pleum700?igsh=Nnp6YnV3MGRsZ3ho&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@piyapongpp?_t=ZS-8vCUmgTFCmW&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://github.com/piyapong9?tab=repositories"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </section>
+        <script src="js/homepage.js"></script>
+</body>
+</html>

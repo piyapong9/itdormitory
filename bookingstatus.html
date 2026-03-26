@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถานะการจอง - IT Dormitory</title>
+    <link rel="stylesheet" href="css/bookingstatus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="homepage.html"><i class="fa-solid fa-home"></i></a>
+            </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="homepage.html">หน้าแรก</a></li>
+                    <li><a href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a href="profile.html">โปรไฟล์</a></li>
+                    <li><a class="login" href="login.html">ออกจากระบบ</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="homepage.html">หน้าแรก</a></li>
+                    <li><a class="mobile" href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="mobile" href="profile.html">โปรไฟล์</a></li>
+                    <li><a class="mobile" href="login.html">ออกจากระบบ</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="status-section">
+        <h1 class="heading">สถานะ <span>การจอง</span></h1>
+
+        <div class="status-container">
+
+            <div class="booking-details">
+                <div class="booking-card">
+                    <div class="booking-header">
+                        <h3><i class="fa-solid fa-bookmark"></i> รายละเอียดการจอง #BK-20690228</h3>
+                        <span class="booking-status pending-badge"><i class="fa-solid fa-clock"></i> รอตรวจสอบ</span>
+                    </div>
+                    <div class="booking-body">
+                        <div class="booking-row">
+                            <span class="label">ชื่อหอ:</span>
+                            <span class="value">หอพักชายตึก 1</span>
+                        </div>
+                        <div class="booking-row">
+                            <span class="label">เลขห้อง:</span>
+                            <span class="value">101</span>
+                        </div>
+                        <div class="booking-row">
+                            <span class="label">ประเภทหอ:</span>
+                            <span class="value">พัดลม</span>
+                        </div>
+                        <div class="booking-row">
+                            <span class="label">วันที่เข้าพัก:</span>
+                            <span class="value">1 เมษายน 2569</span>
+                        </div>
+                        <div class="booking-row">
+                            <span class="label">ระยะเวลา:</span>
+                            <span class="value">1 ภาคเรียน (3 เดือน)</span>
+                        </div>
+                        <div class="booking-row">
+                            <span class="label">ยอดชำระ:</span>
+                            <span class="value price">฿2,000 บาท/เทอม</span>
+                        </div>
+                        <div class="booking-row">
+                            <span class="label">วิธีชำระเงิน:</span>
+                            <span class="value">โอนเงินผ่านธนาคาร</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="social-icons">
+        <h1 class="heading"><span>ติดต่อ</span> เจ้าหน้าที่</h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/piyapong.piyapong.3939"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/pleum700?igsh=Nnp6YnV3MGRsZ3ho&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@piyapongpp?_t=ZS-8vCUmgTFCmW&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://github.com/piyapong9?tab=repositories"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </section>
+    <script src="js/bookingstatus.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงิน - IT Dormitory</title>
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="homepage.html"><i class="fa-solid fa-home"></i></a>
+            </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="homepage.html">หน้าแรก</a></li>
+                    <li><a href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a href="profile.html">โปรไฟล์</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="homepage.html">หน้าแรก</a></li>
+                    <li><a class="mobile" href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="mobile" href="profile.html">โปรไฟล์</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="payment-section">
+        <h1 class="heading">ชำระ <span>เงิน</span></h1>
+
+        <div class="payment-container">
+
+            <div class="order-summary">
+                <h2><i class="fa-solid fa-receipt"></i> สรุปรายการจอง</h2>
+                <div class="summary-card">
+                    <div class="summary-row">
+                        <span>ชื่อหอ:</span>
+                        <span class="value" id="payDormName">หอพักชายตึก 1</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>เลขห้อง:</span>
+                        <span class="value" id="payRoomNumber">101</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>ประเภทหอ:</span>
+                        <span class="value" id="payDormType">พัดลม</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>วันที่เข้าพัก:</span>
+                        <span class="value" id="payCheckIn">1 เมษายน 2569</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>ระยะเวลา:</span>
+                        <span class="value" id="payDuration">1 ภาคเรียน (3 เดือน)</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="summary-row total">
+                        <span>ยอดชำระทั้งหมด:</span>
+                        <span class="value" id="payTotal">฿2,000 บาท/เทอม</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="payment-form">
+                <h2><i class="fa-solid fa-credit-card"></i> ชำระเงินผ่านธนาคาร</h2>
+
+                <div class="transfer-info">
+                    <div class="bank-info">
+                        <h3><i class="fa-solid fa-building-columns"></i> ข้อมูลบัญชีธนาคาร</h3>
+                        <p><strong>ธนาคาร:</strong> กสิกรไทย</p>
+                        <p><strong>ชื่อบัญชี:</strong> หอพัก IT Dormitory</p>
+                        <p><strong>เลขบัญชี:</strong> 123-4-56789-0</p>
+                    </div>
+                </div>
+
+                <div class="upload-section">
+                    <h3><i class="fa-solid fa-cloud-arrow-up"></i> อัปโหลดหลักฐานการชำระเงิน</h3>
+                    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                        <i class="fa-solid fa-image"></i>
+                        <p>คลิกเพื่อเลือกรูปภาพ</p>
+                        <p class="upload-note">รองรับไฟล์ .jpg, .png, .pdf</p>
+                        <input type="file" id="fileInput" accept="image/*,.pdf" style="display: none;" onchange="showFileName(this)">
+                    </div>
+                    <p class="file-name" id="fileName"></p>
+                </div>
+
+                <div class="form-group">
+                    <label>รหัสนักศึกษา</label>
+                    <input type="text" placeholder="กรอกรหัสนักศึกษา" required>
+                </div>
+                <div class="form-group">
+                    <label>ชื่อ-นามสกุล</label>
+                    <input type="text" placeholder="กรอกชื่อ-นามสกุล" required>
+                </div>
+                <div class="form-group">
+                    <label>เบอร์โทรศัพท์</label>
+                    <input type="tel" placeholder="กรอกเบอร์โทรศัพท์" maxlength="10" required>
+                </div>
+
+                <button class="btn-submit" onclick="if(validatePaymentForm()){submitPayment();}">
+                    <i class="fa-solid fa-check-circle"></i> ยืนยันการชำระเงิน
+                </button>
+                <a href="roomdetail.html" class="btn-cancel">
+                    <i class="fa-solid fa-arrow-left"></i> ย้อนกลับ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/payment.js"></script>
+
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <i class="fa-solid fa-circle-check modal-icon"></i>
+            <h2>ชำระเงินสำเร็จ!</h2>
+            <p>ระบบได้รับข้อมูลการชำระเงินของคุณแล้ว</p>
+            <a href="bookingstatus.html" class="btn-modal">ดูสถานะการจอง</a>
+            <a href="homepage.html" class="btn-modal-secondary">กลับหน้าแรก</a>
+        </div>
+    </div>
+
+    <script src="js/payment.js"></script>
+</body>
+</html>

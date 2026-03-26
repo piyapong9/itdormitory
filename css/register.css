@@ -1,0 +1,214 @@
+/* ส่วนนี้คือ css */
+/* ตกแต่ง (id class)*/
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* ลบกลมๆหน้าข้อความ ใน nav */
+}
+body {
+    font-family: 'Kanit';
+    margin: 0; padding-top: 70px; /* ลบ margin และ padding ของ body */
+    box-sizing: border-box; /* ทำให้การจัดการขนาดของ box ง่ายขึ้น */
+    outline: none; border: none; /* ลบเส้นขอบ */
+    text-decoration: none; /* ลบเส้นใต้ */
+    transition: .2s linear; /* ทำให้เอฟเฟกต์ลื่นไหล */
+}
+html{
+    font-size: 65%; /* ขนาดฟอนต์พื้นฐาน*/
+    scroll-behavior: smooth; /* ทำให้การเลื่อนลื่นไหล */
+    scroll-padding: 6rem; 
+    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+    overflow-y: hidden; /* ป้องกันการเลื่อนในแนวตั้ง */
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+.login2{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4A2C00;
+    text-align: center;
+}
+
+.login2:hover{
+    color: #F5A442;
+    text-shadow: 0px 4px 6px rgba(48, 44, 44, 0.185);
+}
+nav ul{
+    padding-top: 10px;
+    padding-right: 10px;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+nav a{
+    color: #4A2C00;
+    display: flex;
+    font-weight: 500;
+    flex-direction: column;
+    margin-left: 4px;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 1rem;
+    transform: scale(1);
+    transition: transform 0.2s ease; /* ทำให้เอฟเฟกต์ลื่นไหล */
+}
+nav a:hover {
+    color: #F5A442;
+    text-shadow: 0px 4px 6px rgba(56, 55, 55, 0.203);
+    transform: scale(1.1);
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999; /* ทำให้ sidebar อยู่ด้านบนสุด */
+    background-color: rgba(255, 255, 255, 0.8); /* สีพื้นหลังโปร่งใส */
+    backdrop-filter: blur(10px); /* ทำให้พื้นหลังเบลอ */
+    box-shadow: 0px 4px 6px rgba(24, 24, 24, 0.135); /* เพิ่มเงา */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+.logo i{
+    display: inline-flex;
+    color: #73AF6F;
+    font-size: 48px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: transform 0.2s ease; /* ทำให้เอฟเฟกต์ลื่นไหล */
+    padding: 10px 10px;
+    padding-bottom: 1px;
+}
+.logo i:hover {
+    color: #F5A442;
+    transform: scale(1.1); /* ขยายขนาด 1.1 เท่า */
+    text-shadow: 0px 4px 6px rgba(48, 44, 44, 0.304);
+}
+.menu-button{
+    display: none;
+}
+.content-bg{
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    background-image: url(https://miro.medium.com/v2/resize:fit:4800/format:webp/1*J5Dsi3wRX8z9FXb6KssIfA.jpeg);
+    background-size: cover; /* ปรับขนาดให้เต็มพื้นที่ */
+    background-position: center; /* จัดตำแหน่งกลาง */
+}
+.content {
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box; /* ทำให้การจัดการขนาดของ box ง่ายขึ้น */
+    border-radius: 4px; /* มุมโค้ง */
+    box-shadow: 0px 4px 6px rgba(24, 24, 24, 0.575); /* เพิ่มเงา */
+}
+
+.header {
+    color: #4A2C00;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 6px rgba(30, 29, 29, 0.304);
+}
+
+.header-form {
+    display: block; /* ทำให้ข้อความอยู่ในบรรทัดใหม่ */
+    font-weight: bold; /* ทำให้ข้อความหนา */
+    font-size: 14px;
+    color: #4A2C00;
+}
+
+.form-input {
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+input.form {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 3px;
+    padding: 8px 6px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgb(128, 180, 240);
+    display: none;
+}
+
+.message.success {
+    background-color: lightgreen;
+    display: block;
+}
+
+.message.danger {
+    background-color: lightcoral;
+    display: block;
+}
+
+.button {
+    background-color: #73AF6F;
+    width: 50%;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s ease-in; /* ทำให้เอฟเฟกต์ลื่นไหล */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(70, 70, 70, 0.26);
+}
+
+.button:hover {
+    background-color: #F5A442;
+    transform: scale(1.01); /* ขยายขนาด 1.1 เท่า */
+    box-shadow: 0px 4px 6px rgba(24, 24, 24, 0.658);
+}
+
+.center {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+    }
+    .header {
+        font-size: 24px;
+    }
+    .button {
+        width: 40%;
+    }
+    .mobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+        margin-top: 10px;
+    }
+}

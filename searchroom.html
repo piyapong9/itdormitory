@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ค้นหาห้องพัก - IT Dormitory</title>
+    <link rel="stylesheet" href="css/searchroom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="homepage.html"><i class="fa-solid fa-home"></i></a>
+            </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="homepage.html">หน้าแรก</a></li>
+                    <li><a href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a href="profile.html">โปรไฟล์</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="homepage.html">หน้าแรก</a></li>
+                    <li><a class="mobile" href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="mobile" href="profile.html">โปรไฟล์</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="search-section">
+        <h1 class="heading">ค้นหา <span>ห้องพัก</span></h1>
+        <div class="search-filter-row">
+            <div class="search-bar">
+                <input type="text" placeholder="ค้นหาห้องพัก..." id="searchInput" onkeyup="filterRooms()">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="filter-dropdowns">
+                <div class="dropdown-group">
+                    <label><i class="fa-solid fa-snowflake"></i> ประเภทหอพัก</label>
+                    <select id="filterType" onchange="filterRooms()">
+                        <option value="all">ทั้งหมด</option>
+                        <option value="fan">พัดลม</option>
+                        <option value="air">แอร์</option>
+                    </select>
+                </div>
+                <div class="dropdown-group">
+                    <label><i class="fa-solid fa-venus-mars"></i> หอพัก</label>
+                    <select id="filterGender" onchange="filterRooms()">
+                        <option value="all">ทั้งหมด</option>
+                        <option value="male">หอพักชาย</option>
+                        <option value="female">หอพักหญิง</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms-section">
+        <div class="dorm-grid">
+            <div class="dorm-card fan" data-type="fan" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">1</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักชายตึก 1</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(1, 'หอพักชายตึก 1'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">2</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักชายตึก 2</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(2, 'หอพักชายตึก 2'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">3</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักชายตึก 3</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(3, 'หอพักชายตึก 3'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">4</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักชายตึก 4</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(4, 'หอพักชายตึก 4'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">5</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักชายตึก 5</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(5, 'หอพักชายตึก 5'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">6</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักชายตึก 6</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(6, 'หอพักชายตึก 6'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">7</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักชายตึก 7</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(7, 'หอพักชายตึก 7'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">8</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักชายตึก 8</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(8, 'หอพักชายตึก 8'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">9</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักชายตึก 9</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(9, 'หอพักชายตึก 9'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="male">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">10</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักชายตึก 10</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(10, 'หอพักชายตึก 10'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">11</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักหญิงตึก 11</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(11, 'หอพักหญิงตึก 11'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">12</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักหญิงตึก 12</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(12, 'หอพักหญิงตึก 12'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">13</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักหญิงตึก 13</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(13, 'หอพักหญิงตึก 13'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">14</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักหญิงตึก 14</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(14, 'หอพักหญิงตึก 14'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card fan" data-type="fan" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">15</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-fan"></i> หอพักหญิงตึก 15</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 4</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เทอม</span></div><a href="#" onclick="openModal(15, 'หอพักหญิงตึก 15'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">16</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักหญิงตึก 16</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(16, 'หอพักหญิงตึก 16'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">17</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักหญิงตึก 17</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(17, 'หอพักหญิงตึก 17'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">18</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักหญิงตึก 18</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(18, 'หอพักหญิงตึก 18'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">19</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักหญิงตึก 19</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(19, 'หอพักหญิงตึก 19'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+            <div class="dorm-card air" data-type="air" data-gender="female">
+                <div class="dorm-number"><span class="dorm-label">เลขตึก</span><span class="dorm-num">20</span></div>
+                <div class="dorm-info"><h3><i class="fa-solid fa-snowflake"></i> หอพักหญิงตึก 20</h3><div class="dorm-tags"><span class="tag-capacity"><i class="fa-solid fa-users"></i> 2-3</span><span class="tag-price"><i class="fa-solid fa-coins"></i> ฿2,000/เดือน</span></div><a href="#" onclick="openModal(20, 'หอพักหญิงตึก 20'); return false;" class="btn-select">เลือก <i class="fa-solid fa-chevron-right"></i></a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="social-icons">
+        <h1 class="heading"><span>ติดต่อ</span> เจ้าหน้าที่</h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/piyapong.piyapong.3939"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/pleum700?igsh=Nnp6YnV3MGRsZ3ho&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@piyapongpp?_t=ZS-8vCUmgTFCmW&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://github.com/piyapong9?tab=repositories"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </section>
+
+
+    <div class="modal-overlay" id="roomModal" onclick="closeModal(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModalDirect()"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="modal-room-grid" id="modalRoomGrid"></div>
+        </div>
+    </div>
+
+    <script src="js/searchroom.js"></script>
+</body>
+</html>

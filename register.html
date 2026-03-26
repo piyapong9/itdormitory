@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <div class="logo">
+        <a href="index.html"><i class="fa-solid fa-home"></i></a>
+    </div>
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a class="login" href="login.html">เข้าสู่ระบบ</a></li>
+        </ul>
+        <ul>
+            <li><a class="mobile" href="index.html">หน้าแรก</a></li>
+            <li><a class="mobile" href="login.html">ลงชื่อเข้าใช้</a></li>
+            <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+    </nav>
+     </div>
+    <div class="content-bg">
+        <div class="content">
+            <div class="header">
+                สมัครสมาชิก
+            </div>       
+            <div class="flex form-input">
+                <label class="header-form" for="name">Name</label>
+                <input class="form" id="name" name="name" type="text" placeholder="กรอกชื่อ-นามสกุล">
+            </div>
+            <div class="flex form-input">
+                <label class="header-form" for="email">Email</label>
+                <input class="form" id="email" name="email" type="email" placeholder="กรอกอีเมล">
+            </div>
+            <div class="flex form-input">
+                <label class="header-form" for="tel">Phone</label>
+                <input class="form" id="tel" name="tel" type="text" placeholder="กรอกเบอร์โทร" maxlength="10" oninput="validatePhoneNumber(this)">
+            </div>
+            <div class="flex form-input">
+                <label class="header-form" for="username">Username</label>
+                <input class="form" id="username" name="username" type="text" placeholder="รหัสนักศึกษา">
+            </div>
+            <div class="flex form-input">
+                <label class="header-form" for="password">Password</label>
+                <input class="form" id="password" name="password" type="password" placeholder="รหัสผ่าน">
+            </div>
+            
+            <div id="message" class="message"></div>
+
+            <div class="center">
+                <button onclick="submitData()" class="button">
+                    สมัครสมาชิก
+                </button>
+            </div>
+            <div class="login2">
+                <a href="login.html">เข้าสู่ระบบ</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

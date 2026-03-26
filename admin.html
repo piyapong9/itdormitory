@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการระบบ - IT Dormitory Admin</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="admin.html"><i class="fa-solid fa-shield-halved"></i></a>
+            </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="admin.html">แดชบอร์ด</a></li>
+                    <li><a class="login" href="login.html">ออกจากระบบ</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="admin.html">แดชบอร์ด</a></li>
+                    <li><a class="mobile" href="login.html">ออกจากระบบ</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="admin-section">
+        <h1 class="heading">ระบบจัดการ <span>หอพัก (Admin)</span></h1>
+
+
+        <div class="table-card">
+            <div class="table-header">
+                <h2><i class="fa-solid fa-list-check"></i> รายการจองทั้งหมด</h2>
+                <div class="table-actions">
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" placeholder="ค้นหาชื่อ / รหัส..." id="searchTable" onkeyup="searchBookings()">
+                    </div>
+                    <select class="filter-select" onchange="filterStatus(this.value)">
+                        <option value="all">ทั้งหมด</option>
+                        <option value="paid">ชำระเงินแล้ว</option>
+                        <option value="pending">รอดำเนินการ</option>
+                        <option value="approved">อนุมัติแล้ว</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>รหัสนักศึกษา</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>ห้องพัก</th>
+                            <th>ประเภท</th>
+                            <th>วันที่จอง</th>
+                            <th>ยอดชำระ</th>
+                            <th>สถานะ</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingTable">
+                        <tr data-status="paid" data-id="1">
+                            <td>1</td>
+                            <td>S001</td>
+                            <td>นายสมชาย ใจดี</td>
+                            <td>101</td>
+                            <td>พัดลม</td>
+                            <td>28 ก.พ. 69</td>
+                            <td>2,000</td>
+                            <td><span class="badge paid clickable" onclick="viewDetail(1)">ชำระเงินแล้ว</span></td>
+                            <td>
+                                <button class="btn-approve" onclick="approveBooking(this)"><i class="fa-solid fa-check"></i></button>
+                                <button class="btn-reject" onclick="rejectBooking(this)"><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        <tr data-status="pending" data-id="2">
+                            <td>2</td>
+                            <td>S002</td>
+                            <td>นางสาวสมหญิง รักเรียน</td>
+                            <td>1102</td>
+                            <td>พัดลม</td>
+                            <td>1 มี.ค. 69</td>
+                            <td>2,000</td>
+                            <td><span class="badge pending clickable" onclick="viewDetail(2)">รอดำเนินการ</span></td>
+                            <td>
+                                <button class="btn-approve" onclick="approveBooking(this)" disabled><i class="fa-solid fa-check"></i></button>
+                                <button class="btn-reject" onclick="rejectBooking(this)" disabled><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        <tr data-status="pending" data-id="3">
+                            <td>3</td>
+                            <td>S003</td>
+                            <td>นายประวิทย์ เก่งมาก</td>
+                            <td>601</td>
+                            <td>แอร์</td>
+                            <td>1 มี.ค. 69</td>
+                            <td>2,000</td>
+                            <td><span class="badge pending clickable" onclick="viewDetail(3)">รอดำเนินการ</span></td>
+                            <td>
+                                <button class="btn-approve" onclick="approveBooking(this)" disabled><i class="fa-solid fa-check"></i></button>
+                                <button class="btn-reject" onclick="rejectBooking(this)" disabled><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        <tr data-status="paid" data-id="4">
+                            <td>4</td>
+                            <td>S004</td>
+                            <td>นางสาววรรณา สดใส</td>
+                            <td>1101</td>
+                            <td>พัดลม</td>
+                            <td>25 ก.พ. 69</td>
+                            <td>2,000</td>
+                            <td><span class="badge paid clickable" onclick="viewDetail(4)">ชำระเงินแล้ว</span></td>
+                            <td>
+                                <button class="btn-approve" onclick="approveBooking(this)"><i class="fa-solid fa-check"></i></button>
+                                <button class="btn-reject" onclick="rejectBooking(this)"><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        <tr data-status="paid" data-id="5">
+                            <td>5</td>
+                            <td>S005</td>
+                            <td>นายณัฐพล ขยันดี</td>
+                            <td>602</td>
+                            <td>แอร์</td>
+                            <td>20 ก.พ. 69</td>
+                            <td>2,000</td>
+                            <td><span class="badge paid clickable" onclick="viewDetail(5)">ชำระเงินแล้ว</span></td>
+                            <td>
+                                <button class="btn-approve" onclick="approveBooking(this)"><i class="fa-solid fa-check"></i></button>
+                                <button class="btn-reject" onclick="rejectBooking(this)"><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        <tr data-status="pending" data-id="6">
+                            <td>6</td>
+                            <td>S006</td>
+                            <td>นางสาวกมลชนก สวยงาม</td>
+                            <td>1602</td>
+                            <td>แอร์</td>
+                            <td>2 มี.ค. 69</td>
+                            <td>2,000</td>
+                            <td><span class="badge pending clickable" onclick="viewDetail(6)">รอดำเนินการ</span></td>
+                            <td>
+                                <button class="btn-approve" onclick="approveBooking(this)" disabled><i class="fa-solid fa-check"></i></button>
+                                <button class="btn-reject" onclick="rejectBooking(this)" disabled><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <button class="btn-approve-all" onclick="approveAllPaid()">
+                    <i class="fa-solid fa-check-double"></i> อนุมัติทั้งหมด (ชำระเงินแล้ว)
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeModal()">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <h2 id="modalTitle"><i class="fa-solid fa-user"></i> รายละเอียดนักศึกษา</h2>
+            <div class="modal-body" id="modalBody">
+            </div>
+            <button class="btn-close-modal" onclick="closeModal()">ปิด</button>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

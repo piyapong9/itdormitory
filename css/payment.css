@@ -1,0 +1,477 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    font-family: 'Kanit';
+    margin: 0; padding-top: 70px;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: .2s linear;
+    background-image: url(https://miro.medium.com/v2/resize:fit:4800/format:webp/1*J5Dsi3wRX8z9FXb6KssIfA.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+html {
+    font-size: 65%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+section {
+    padding: 20px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.container {
+    position: relative;
+    margin: 0% auto;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul {
+    padding-top: 10px;
+    padding-right: 10px;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+nav a {
+    color: #2C3930;
+    display: flex;
+    font-weight: 500;
+    flex-direction: column;
+    margin-left: 4px;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 1rem;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+nav a:hover {
+    color: peru;
+    text-shadow: 0px 4px 6px rgba(56, 55, 55, 0.203);
+    transform: scale(1.1);
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 6px rgba(24, 24, 24, 0.135);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.logo i {
+    display: inline-flex;
+    color: #73AF6F;
+    font-size: 48px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+    padding: 10px 10px;
+    padding-bottom: 1px;
+}
+.logo i:hover {
+    color: peru;
+    transform: scale(1.1);
+    text-shadow: 0px 4px 6px rgba(48, 44, 44, 0.304);
+}
+.menu-button {
+    display: none;
+}
+.heading {
+    font-size: 4rem;
+    color: #2C3930;
+    text-align: center;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+.heading span {
+    color: #f29b53;
+}
+.contact .heading {
+    background: #ffdabb50;
+    font-size: 3rem;
+}
+
+/* Payment Section */
+.payment-section {
+    padding: 0 5% 3rem;
+}
+.payment-container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.order-summary {
+    flex: 1 1 400px;
+}
+.order-summary h2 {
+    font-size: 24px;
+    color: #2C3930;
+    margin-bottom: 20px;
+}
+.order-summary h2 i {
+    color: #73AF6F;
+    margin-right: 10px;
+}
+.summary-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+}
+.summary-row:last-child {
+    border-bottom: none;
+}
+.summary-row .value {
+    font-weight: bold;
+    color: #2C3930;
+}
+.summary-row.total {
+    padding-top: 15px;
+    font-size: 20px;
+}
+.summary-row.total .value {
+    color: #f29b53;
+    font-size: 22px;
+}
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, #537b5e, #f29b53);
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+/* Payment Form */
+.payment-form {
+    flex: 1 1 450px;
+}
+.payment-form h2 {
+    font-size: 24px;
+    color: #2C3930;
+    margin-bottom: 20px;
+}
+.payment-form h2 i {
+    color: #73AF6F;
+    margin-right: 10px;
+}
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.method-option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    min-width: 150px;
+}
+.method-option input {
+    display: none;
+}
+.method-option i {
+    font-size: 30px;
+    color: #73AF6F;
+}
+.method-option span {
+    font-size: 14px;
+    color: #555;
+}
+.method-option:hover,
+.method-option.active {
+    border-color: #537b5e;
+    background: #f0f8f2;
+}
+.method-option.active i {
+    color: #f29b53;
+}
+.transfer-info,
+.qr-info {
+    margin-bottom: 20px;
+}
+.bank-info,
+.qr-code-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #73AF6F;
+}
+.bank-info h3,
+.qr-code-box h3 {
+    font-size: 18px;
+    color: #2C3930;
+    margin-bottom: 12px;
+}
+.bank-info h3 i,
+.qr-code-box h3 i {
+    color: #73AF6F;
+    margin-right: 8px;
+}
+.bank-info p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 5px;
+}
+.qr-placeholder {
+    text-align: center;
+    padding: 30px;
+}
+.qr-placeholder > i {
+    font-size: 120px;
+    color: #2C3930;
+    margin-bottom: 15px;
+}
+.qr-placeholder p {
+    font-size: 16px;
+    color: #555;
+}
+.qr-amount {
+    font-size: 24px !important;
+    font-weight: bold;
+    color: #f29b53 !important;
+    margin-top: 10px;
+}
+
+/* Upload */
+.upload-section {
+    margin-bottom: 20px;
+}
+.upload-section h3 {
+    font-size: 18px;
+    color: #2C3930;
+    margin-bottom: 12px;
+}
+.upload-section h3 i {
+    color: #73AF6F;
+    margin-right: 8px;
+}
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fafafa;
+}
+.upload-area:hover {
+    border-color: #537b5e;
+    background: #f0f8f2;
+}
+.upload-area i {
+    font-size: 40px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.upload-area p {
+    font-size: 15px;
+    color: #777;
+}
+.upload-note {
+    font-size: 13px !important;
+    color: #aaa !important;
+}
+.file-name {
+    font-size: 14px;
+    color: #537b5e;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2C3930;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-family: 'Kanit';
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+.form-group input:focus {
+    border-color: #537b5e;
+    outline: none;
+}
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #73AF6F;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Kanit';
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+.btn-submit:hover {
+    background-color: peru;
+    transform: scale(1.02);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+.btn-submit i {
+    margin-right: 8px;
+}
+.btn-cancel {
+    display: block;
+    padding: 12px;
+    background-color: #eee;
+    color: #2C3930;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Kanit';
+    text-align: center;
+    transition: all 0.3s;
+}
+.btn-cancel:hover {
+    background-color: #ddd;
+}
+.btn-cancel i {
+    margin-right: 8px;
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+.modal-icon {
+    font-size: 60px;
+    color: #73AF6F;
+    margin-bottom: 15px;
+}
+.modal-content h2 {
+    font-size: 26px;
+    color: #2C3930;
+    margin-bottom: 10px;
+}
+.modal-content p {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.btn-modal {
+    display: block;
+    padding: 12px 30px;
+    background-color: #73AF6F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Kanit';
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+.btn-modal:hover {
+    background-color: peru;
+}
+.btn-modal-secondary {
+    display: block;
+    padding: 10px;
+    color: #777;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Kanit';
+    transition: color 0.3s;
+}
+.btn-modal-secondary:hover {
+    color: peru;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+    .mobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+        margin-top: 10px;
+    }
+    .payment-container {
+        flex-direction: column;
+    }
+    .payment-methods {
+        flex-direction: column;
+    }
+}

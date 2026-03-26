@@ -1,0 +1,279 @@
+@font-face {
+    font-family: 'Kanit';
+    src: url('./Kanit/Kanit-Regular.ttf');
+}
+* { 
+    margin: 0;
+    padding: 0;
+    list-style: none; /* ลบกลมๆหน้าข้อความ ใน nav */
+}
+body { 
+    font-family: 'Kanit';
+    margin: 0; padding-top: 70px; /* ลบ margin และ padding ของ body */
+    box-sizing: border-box; /* ทำให้การจัดการขนาดของ box ง่ายขึ้น */
+    outline: none; border: none; /* ลบเส้นขอบ */
+    text-decoration: none; /* ลบเส้นใต้ */
+    transition: .2s linear; /* ทำให้เอฟเฟกต์ลื่นไหล */
+}
+html{
+    font-size: 65%; /* ขนาดฟอนต์พื้นฐาน*/
+    scroll-behavior: smooth; /* ทำให้การเลื่อนลื่นไหล */
+    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+}
+section{
+    padding: 20px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.container {
+    position: relative;
+    margin: 0% auto;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    padding-top: 10px;
+    padding-right: 10px;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+nav a{
+    color: #2C3930;
+    display: flex;
+    font-weight: 500;
+    flex-direction: column;
+    margin-left: 4px;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 1rem;
+    transform: scale(1);
+    transition: transform 0.2s ease; /* ทำให้เอฟเฟกต์ลื่นไหล */
+}
+nav a:hover {
+    color: peru;
+    text-shadow: 0px 4px 6px rgba(56, 55, 55, 0.203);
+    transform: scale(1.1);
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999; /* ทำให้ sidebar อยู่ด้านบนสุด */
+    background-color: rgba(255, 255, 255, 0.8); /* สีพื้นหลังโปร่งใส */
+    backdrop-filter: blur(10px); /* ทำให้พื้นหลังเบลอ */
+    box-shadow: 0px 4px 6px rgba(24, 24, 24, 0.135); /* เพิ่มเงา */
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+.logo i{
+    display: inline-flex;
+    color: #73AF6F;
+    font-size: 48px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: transform 0.2s ease; /* ทำให้เอฟเฟกต์ลื่นไหล */
+    padding: 10px 10px;
+    padding-bottom: 1px;
+}
+.logo i:hover {
+    color: peru;
+    transform: scale(1.1); /* ขยายขนาด 1.1 เท่า */
+    text-shadow: 0px 4px 6px rgba(48, 44, 44, 0.304);
+}
+.menu-button{
+    display: none;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-image:url(https://miro.medium.com/v2/resize:fit:4800/format:webp/1*J5Dsi3wRX8z9FXb6KssIfA.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.header2{
+    max-width: 50rem;
+    color: #fff;
+    margin-left: 5rem;
+    margin-bottom: 9rem;
+}
+.header2 h3{
+    line-height: 1;
+    font-size: 9rem;
+    text-shadow: 0px 4px 6px rgba(3, 3, 3, 0.591); /* เพิ่มเงา */
+}
+.header2 .to{
+    color: #73AF6F;
+}
+.header2 p{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 1.5; /* ระยะห่างระหว่างบรรทัด */
+    margin-top: 20px;
+    color: #ebebeb;
+    text-shadow: 0px 4px 6px rgb(0, 0, 0); /* เพิ่มเงา */
+}
+.book-link{
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color:#73AF6F;
+    color: #fff;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 30px;
+    transform: scale(1);
+    transition: transform 0.2s ease; /* ทำให้เอฟเฟกต์ลื่นไหล */
+}
+.book-link:hover{
+    background-color: peru;
+    color: #000;
+    transform: scale(1.1); /* ขยายขนาดเมื่อ hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.724); /* เพิ่มเงา */
+}
+
+.heading{
+    font-size: 3rem;
+    color: #2C3930;
+    text-align: center;
+    padding: 1rem;
+    margin: 2rem 0;
+    background:#ffdabb50;
+}
+.heading span{
+    color: #f29b53;
+}
+.news {
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.news .steps-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.news .steps-title {
+    font-size: 2.4rem;
+    color: #2C3930;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.news .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.news .step-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.06);
+}
+.news .step-number {
+    width: 45px;
+    height: 45px;
+    background: #73AF6F;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto 12px;
+}
+.news .step-card h3 {
+    font-size: 1.8rem;
+    color: #2C3930;
+    margin-bottom: 8px;
+}
+.news .step-card p {
+    font-size: 1.4rem;
+    color: #888;
+    line-height: 1.6;
+}
+.social-icons{
+    font-size: 5rem;
+    display: flex;
+    justify-content: center; /* จัดกลาง */
+    align-items: center; /* จัดกลาง */
+    gap: 5rem;
+    margin-top: 2rem;
+}
+.social-icons i{
+    display: inline-flex;
+    color: #2C3930;
+    font-size: 48px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: transform 0.2s ease; /* ทำให้เอฟเฟกต์ลื่นไหล */
+    padding: 10px 10px;
+    padding-bottom: 1px;
+}
+.social-icons i:hover {
+    color: peru;
+    transform: scale(1.1); /* ขยายขนาด 1.1 เท่า */
+    text-shadow: 0px 4px 6px rgba(48, 44, 44, 0.304);
+}
+
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 50%;
+    }
+    section{
+        padding: 2rem;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    .social-icons {
+        font-size: 2rem;
+        gap: 3rem;
+        flex-direction: column; /* เปลี่ยนการจัดเรียงเป็นแนวตั้ง */
+    }
+    .mobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+        margin-top: 10px;
+    }
+    .header2{
+        margin-left: 2rem;
+        margin-bottom: 30rem;
+    }
+    .header2 h3{
+        font-size: 50px;
+    }
+    .header2 p{
+        font-size: 15px;
+    }
+    .book-link{
+        font-size: 15px;
+    }
+    .news .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

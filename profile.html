@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ - IT Dormitory</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="homepage.html"><i class="fa-solid fa-home"></i></a>
+            </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="homepage.html">หน้าแรก</a></li>
+                    <li><a href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="logout" href="login.html">ออกจากระบบ</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="homepage.html">หน้าแรก</a></li>
+                    <li><a class="mobile" href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="mobile logout" href="login.html">ออกจากระบบ</a></li>
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="profile-section">
+        <h1 class="heading">PRO <span>FILE</span></h1>
+
+        <div class="profile-container">
+
+            <div class="profile-sidebar">
+                <div class="avatar-box">
+                    <div class="avatar">
+                        <i class="fa-solid fa-user-circle"></i>
+                    </div>
+                    <h2>สมชาย ใจดี</h2>
+                    <p class="student-id">รหัสนักศึกษา: S001</p>
+                    <span class="role-badge">นักศึกษา</span>
+                </div>
+
+                <div class="quick-actions">
+                    <a href="bookingstatus.html" class="btn-action">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>สถานะการจอง</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="searchroom.html" class="btn-action">
+                        <i class="fa-solid fa-search"></i>
+                        <span>ค้นหาห้องพัก</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="login.html" class="btn-action logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>ออกจากระบบ</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="profile-details">
+                <div class="detail-card">
+                    <h3><i class="fa-solid fa-user"></i> ข้อมูลส่วนตัว</h3>
+                    <div class="detail-row">
+                        <label>ชื่อ-นามสกุล</label>
+                        <p>นาย สมชาย ใจดี</p>
+                    </div>
+                    <div class="detail-row">
+                        <label>รหัสนักศึกษา</label>
+                        <p>S001</p>
+                    </div>
+                    <div class="detail-row">
+                        <label>คณะ</label>
+                        <p>คณะศิลปศาสตร์และวิทยาศาสตร์</p>
+                    </div>
+                    <div class="detail-row">
+                        <label>ชั้นปี</label>
+                        <p>ปี 3</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3><i class="fa-solid fa-address-book"></i> ข้อมูลติดต่อ</h3>
+                    <div class="detail-row">
+                        <label>อีเมล</label>
+                        <p>somchai@email.com</p>
+                    </div>
+                    <div class="detail-row">
+                        <label>เบอร์โทรศัพท์</label>
+                        <p>081-234-5678</p>
+                    </div>
+                    <div class="detail-row">
+                        <label>LINE ID</label>
+                        <p>somchai_j</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3><i class="fa-solid fa-bed"></i> ข้อมูลห้องพัก</h3>
+                    <div class="detail-row">
+                        <label>สถานะ</label>
+                        <p class="status-pending"><i class="fa-solid fa-clock"></i> รอดำเนินการ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="social-icons">
+        <h1 class="heading"><span>ติดต่อ</span> เจ้าหน้าที่</h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/piyapong.piyapong.3939"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/pleum700?igsh=Nnp6YnV3MGRsZ3ho&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@piyapongpp?_t=ZS-8vCUmgTFCmW&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://github.com/piyapong9?tab=repositories"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </section>
+    <script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จองห้องพัก - IT Dormitory</title>
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="homepage.html"><i class="fa-solid fa-home"></i></a>
+            </div>
+            <nav>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+                    <li><a href="homepage.html">หน้าแรก</a></li>
+                    <li><a href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a href="profile.html">โปรไฟล์</a></li>
+                </ul>
+                <ul>
+                    <li><a class="mobile" href="homepage.html">หน้าแรก</a></li>
+                    <li><a class="mobile" href="searchroom.html">ค้นหาห้องพัก</a></li>
+                    <li><a class="mobile" href="profile.html">โปรไฟล์</a></li>   
+                    <li class="menu-button" onclick="showSidebar()"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="booking-section">
+        <h1 class="heading">จอง <span>ห้องพัก</span></h1>
+
+        <div class="booking-container">
+            <div class="booking-form-card">
+                <h2><i class="fa-solid fa-pen-to-square"></i> กรอกข้อมูลการจอง</h2>
+
+                <div class="form-group">
+                    <label>รหัสนักศึกษา <span class="required">*</span></label>
+                    <input type="text" placeholder="กรอกรหัสนักศึกษา">
+                </div>
+                <div class="form-group">
+                    <label>ชื่อ-นามสกุล <span class="required">*</span></label>
+                    <input type="text" placeholder="กรอกชื่อ-นามสกุล">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>อีเมล <span class="required">*</span></label>
+                        <input type="email" placeholder="กรอกอีเมล">
+                    </div>
+                    <div class="form-group">
+                        <label>เบอร์โทรศัพท์ <span class="required">*</span></label>
+                        <input type="tel" placeholder="กรอกเบอร์โทร" maxlength="10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>คณะ <span class="required">*</span></label>
+                    <select>
+                        <option value="">-- เลือกคณะ --</option>
+                        <option value="คณะเกษตร">คณะเกษตร</option>
+                        <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์</option>
+                        <option value="คณะวิทยาศาสตร์การกีฬาและสุขภาพ">คณะวิทยาศาสตร์การกีฬาและสุขภาพ</option>
+                        <option value="คณะศิลปศาสตร์และวิทยาศาสตร์">คณะศิลปศาสตร์และวิทยาศาสตร์</option>
+                        <option value="คณะศึกษาศาสตร์และพัฒนศาสตร์">คณะศึกษาศาสตร์และพัฒนศาสตร์</option>
+                        <option value="คณะอุตสาหกรรมบริการ">คณะอุตสาหกรรมบริการ</option>
+                        <option value="คณะสัตวแพทยศาสตร์">คณะสัตวแพทยศาสตร์</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>เพศ <span class="required">*</span></label>
+                        <select id="genderSelect" onchange="updateDormOptions()">
+                            <option value="">-- เลือกเพศ --</option>
+                            <option value="male">ชาย</option>
+                            <option value="female">หญิง</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>ประเภทหอ <span class="required">*</span></label>
+                        <select id="typeSelect" onchange="updateDormOptions()">
+                            <option value="">-- เลือกประเภท --</option>
+                            <option value="fan">พัดลม (฿2,000/เทอม)</option>
+                            <option value="air">แอร์ (฿2,000/เดือน)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>หอพัก <span class="required">*</span></label>
+                        <select id="dormSelect" onchange="updateRoomOptions()">
+                            <option value="">-- เลือกหอพัก --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>ห้อง <span class="required">*</span></label>
+                        <select id="roomSelect">
+                            <option value="">-- เลือกห้อง --</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-booking" onclick="goToPayment()">
+                    <i class="fa-solid fa-calendar-check"></i> จองเลย
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="social-icons">
+        <h1 class="heading"><span>ติดต่อ</span> เจ้าหน้าที่</h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/piyapong.piyapong.3939"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/pleum700?igsh=Nnp6YnV3MGRsZ3ho&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@piyapongpp?_t=ZS-8vCUmgTFCmW&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://github.com/piyapong9?tab=repositories"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </section>
+        <script src="js/booking.js"></script>
+    </script>
+</body>
+</html>
